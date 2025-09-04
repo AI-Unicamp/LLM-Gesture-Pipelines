@@ -1,6 +1,6 @@
 # From Embeddings to Language Models: A Comparative Analysis of Feature Extractors for Text-Only and Multimodal Gesture Generation
 
-📅 **Final submission is expected before September 12.**
+📅 **The full implementation of the repository and pipeline configurations will be available before September 12th.**
 
 **Johsac I. G. Sanchez, Paula D. P. Costa**
 *ACM International Conference on Multimedia (ACM Multimedia) 2025*
