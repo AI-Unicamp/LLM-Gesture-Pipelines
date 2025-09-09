@@ -32,5 +32,8 @@ SHELL ["conda", "run", "-n", "llm", "/bin/bash", "-c"]
 # Instalar dependencias adicionais
 RUN pip install pydub praat-parselmouth essentia TextGrid
 
+# Clonar el repositorio DiffuseStyleGesture
+RUN git clone https://github.com/YoungSeng/DiffuseStyleGesture.git DiffuseStyleGesture
+
 # Manter a terminal aberta 
 CMD ["bash"]

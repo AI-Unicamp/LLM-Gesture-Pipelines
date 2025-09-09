@@ -7,8 +7,6 @@ channels:
 
 dependencies:
   - python=3.8
-  - cudatoolkit=12.2
-#  - cudatoolkit=11.8  
   - pip
   - h5py
   - numpy
@@ -16,7 +14,7 @@ dependencies:
   - libsndfile
   - pip:
 #    - torch==2.0.0 
-    - torch==2.1.0+cu121 --extra-index-url https://download.pytorch.org/whl/cu121
+    - torch==2.1.0 --extra-index-url https://download.pytorch.org/whl/cu121
     - torchvision
     - transformers 
     - transforms3d

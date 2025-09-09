@@ -1,0 +1,3 @@
+[submodule "DiffuseStyleGesture"]
+	path = DiffuseStyleGesture
+	url = https://github.com/YoungSeng/DiffuseStyleGesture.git
