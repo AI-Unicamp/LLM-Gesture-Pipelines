@@ -26,8 +26,6 @@ Generating expressive and contextually appropriate co-speech gestures is crucial
 - 📊 Scripts for objective evaluation using metrics like FGD, BAS, DS, APSD, JM, and Dice.
 - 📹 Supplementary videos showing qualitative results for all pipelines.
 
-## 📂 Project Structure
-
 ## 📝 Abstract
 
 Generating expressive and contextually appropriate co-speech gestures is crucial for naturalness in human-agent interaction. This study presents a systematic evaluation of seven gesture generation pipelines, comparing audio (WavLM, Whisper) and text (Word2Vec, Llama-3.2) feature extractors. We demonstrate that a smaller 3B-parameter LLM can achieve state-of-the-art performance, offering guidance for balancing generative quality with model accessibility.
@@ -60,7 +58,7 @@ Generating expressive and contextually appropriate co-speech gestures is crucial
 ┃ ┃ ┃ ┃ ┣ 📄 tst_2023_v0_028_main-agent_text_audio.npy  
 ┃ ┃ ┃ ┃ ┣ 📄 ...  \
 ┃ ┃ ┃ ┣ 📄 metadata.csv  
-┃ ┣ 📄 val_2023_v0_014_main-agent.npy
+┃ ┣ 📄 val_2023_v0_014_main-agent.npy 
 ┣ 📂 models  
 ┃ ┣ 📂 llm  
 ┃ ┃ ┣ 📄 llama3b_config.py  
@@ -95,7 +93,7 @@ Generating expressive and contextually appropriate co-speech gestures is crucial
 ┃ ┣ 📂 ...
 ┣ 📂 docs  
 ┃ ┣ 📄 paper_ACMMM2025.pdf  
-┃ ┣ 📄 pipelines.png 
+┃ ┣ 📄 pipelines.png  
 ┣ 📂 evaluation  
 ┃ ┣ 📜 environment.yml  
 ┃ ┣ 📜 Dockerfile  
@@ -113,44 +111,27 @@ Generating expressive and contextually appropriate co-speech gestures is crucial
    cd LLM-Gesture-Pipelines
    ```
 
-2. **Install Git LFS for large files**:
-   ```bash
-   git lfs install
-   git lfs pull
-   ```
-
-3. **Build the Docker image for training/inference**:
+2. **Build the Docker image for training/inference**:
    ```bash
    docker build -t llm .
    ```
 
-4. **Build the Docker image for evaluation**:
+3. **Build the Docker image for evaluation**:
    ```bash
    cd evaluation
    docker build -t benchmarking_sdgg_models_image .
    cd ..
    ```
 
-5. **Run the container for training/inference**:
+4. **Run the container for training/inference**:
    ```bash
    docker run --rm -it --gpus device=0 --userns=host --shm-size 64G -v $(pwd):/workspace -p '8888:8888' --name my_container llm:latest /bin/bash
    ```
    *Note*: Scripts use `/root/DiffuseStyleGesture` by default, which is cloned automatically during the Docker build. If `/workspace/DiffuseStyleGesture` is mounted (e.g., for local development), scripts prioritize it for custom modifications.
 
-6. **Run the container for evaluation**:
+5. **Run the container for evaluation**:
    ```bash
    docker run --rm -it --gpus device=0 --name my_evaluation_container benchmarking_sdgg_models_image:latest /bin/bash
-   ```
-
-7. **Install dependencies** (if not using Docker):
-   ```bash
-   conda env create -f environment.yml
-   conda activate llm
-   pip install pydub praat-parselmouth essentia TextGrid bvhsdk wandb
-   conda install -c conda-forge ffmpeg h5py
-   cd DiffuseStyleGesture
-   pip install -r requirements.txt
-   cd ..
    ```
 
 ## 🛠️ Usage
