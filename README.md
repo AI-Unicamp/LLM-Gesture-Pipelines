@@ -2,7 +2,7 @@
 
 ### ⚠️ Important Notice
 
-📅 **The full implementation of the repository and pipeline configurations will be available after September 17th.**
+📅 **The full implementation of the repository and pipeline configurations will be available after September 24th.**
 
 **Johsac I. G. Sanchez, Paula D. P. Costa**
 *ACM International Conference on Multimedia (ACM Multimedia) 2025*
