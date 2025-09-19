@@ -2,7 +2,7 @@
 
 ### ⚠️ Important Notice
 
-📅 **The full implementation of the repository and pipeline configurations will be available after September 17th.**
+📅 **The full implementation of the repository and pipeline configurations will be available after September 24th.**
 
 **Johsac I. G. Sanchez, Paula D. P. Costa**
 *ACM International Conference on Multimedia (ACM Multimedia) 2025*
@@ -25,7 +25,6 @@ Generating expressive and contextually appropriate co-speech gestures is crucial
 - 🎥 Code to run inference and generate gestures from your own audio/text files.
 - 📊 Scripts for objective evaluation using metrics like FGD, BAS, DS, APSD, JM, and Dice.
 - 📹 Supplementary videos showing qualitative results for all pipelines.
-
 
 ## 📂 Project Structure
 
@@ -81,7 +80,7 @@ Generating expressive and contextually appropriate co-speech gestures is crucial
 ┃ ┣ 📂 Multi-Dual_model000540000  
 ┃ ┣ 📂 ... \
 ┣ 📂 docs  
-┃ ┣ 📄 pipelines.png  
+┃ ┣ 📄 pipelines.png 
 ┣ 📂 evaluation  
 ┃ ┣ 📜 environment.yml  
 ┃ ┣ 📜 Dockerfile  
