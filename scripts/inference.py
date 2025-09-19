@@ -221,24 +221,9 @@ def main(args, config, diffuse_root):
 
 if __name__ == '__main__':
     diffuse_root = add_diffuse_gesture_path()
-    
-    possible_config_paths = [
-        '/root/DiffuseStyleGesture/BEAT-TWH-main/mydiffusion_beat_twh/configs/DiffuseStyleGesture.yml',
-        '/workspace/DiffuseStyleGesture/BEAT-TWH-main/mydiffusion_beat_twh/configs/DiffuseStyleGesture.yml',
-        'DiffuseStyleGesture/BEAT-TWH-main/mydiffusion_beat_twh/configs/DiffuseStyleGesture.yml'
-    ]
-    
-    default_config_path = None
-    for path in possible_config_paths:
-        if os.path.exists(path):
-            default_config_path = path
-            break
-
-    if default_config_path is None:
-        raise FileNotFoundError("No se pudo encontrar 'DiffuseStyleGesture.yml' en las rutas esperadas.")
 
     parser = argparse.ArgumentParser(description='Unified Gesture Generation')
-    parser.add_argument('--config', default=default_config_path)
+    parser.add_argument('--config', default='models/DiffuseStyleGesture.yml') 
     parser.add_argument('--gpu', type=str, default='0')
     parser.add_argument('--model_path', type=str, required=True)
     parser.add_argument('--txt_path', type=str, required=True)

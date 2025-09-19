@@ -1,4 +1,4 @@
-# Archivos y directorios a ignorar
+# Files and directories to ignore
 *.pyc
 __pycache__/
 *.pyo
@@ -21,14 +21,18 @@ dist/
 *.mp4
 *.avi
 *.bvh
-# Ignorar datos grandes
-data/train/*
-!data/train/sample_train.tsv
-data/test/*
-!data/test/sample_test.tsv
-# Ignorar modelos pre-entrenados grandes
+*.tsv
+
+# Ignore large data
+data/trn/*
+data/tst/*
+
+# Ignore large pre-trained models
 models/pretrained/*
 !models/pretrained/README.md
-# Ignorar resultados de evaluación
+models/llama-3.2-3b-instruct/
+models/WavLM/
+
+# Ignore evaluation results
 evaluation/videos/*
 !evaluation/videos/README.md
