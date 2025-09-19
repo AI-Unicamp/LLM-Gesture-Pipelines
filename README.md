@@ -141,38 +141,52 @@ Train a model (e.g., model v6: Multi-DiT):
 conda run -n llm python /workspace/scripts/train.py --model /workspace/models/mdm.py --model_name Multi-DiT
 ```
 
-### Inference
+## 🏃 Running Inference
+To generate BVH gestures from audio and text inputs, first navigate to the project's root directory (`/workspace`) inside the container. This ensures that Python can correctly find the necessary modules.
+
+1. **Change to the project directory and activate the Conda environment:**:
+```bash
+cd /workspace
+source activate llm
+```
+
+1. **Generate gestures for each model:**
 Generate BVH gestures from audio and text inputs for each model:
 ```bash
-conda run -n llm python /workspace/scripts/inference.py \
+# Multi-Fusion
+python scripts/inference.py \
     --model_name Multi-Fusion \
-    --model_path /workspace/models/pretrained/Multi-Fusion/model000540000.pt \
-    --txt_path /workspace/data/tst/main-agent/text-audio/ \
-    --metadata_path /workspace/data/tst/
+    --model_path models/pretrained/Multi-Fusion/model000540000.pt \
+    --txt_path data/tst/main-agent/text-audio/ \
+    --metadata_path data/tst/
 
-conda run -n llm python /workspace/scripts/inference.py \
+# Multi-Dual
+python scripts/inference.py \
     --model_name Multi-Dual \
-    --model_path /workspace/models/pretrained/Multi-Dual/model000540000.pt \
-    --txt_path /workspace/data/tst/main-agent/text-audio/ \
-    --metadata_path /workspace/data/tst/
+    --model_path models/pretrained/Multi-Dual/model000540000.pt \
+    --txt_path data/tst/main-agent/text-audio/ \
+    --metadata_path data/tst/
 
-conda run -n llm python /workspace/scripts/inference.py \
+# Text-Only
+python scripts/inference.py \
     --model_name Text-Only \
-    --model_path /workspace/models/pretrained/Text-Only/model000540000.pt \
-    --txt_path /workspace/data/tst/main-agent/text-audio/ \
-    --metadata_path /workspace/data/tst/
+    --model_path models/pretrained/Text-Only/model000540000.pt \
+    --txt_path data/tst/main-agent/text-audio/ \
+    --metadata_path data/tst/
 
-conda run -n llm python /workspace/scripts/inference.py \
+# Multi-DiT
+python scripts/inference.py \
     --model_name Multi-DiT \
-    --model_path /workspace/models/pretrained/Multi-DiT/model000540000.pt \
-    --txt_path /workspace/data/tst/main-agent/text-audio/ \
-    --metadata_path /workspace/data/tst/
+    --model_path models/pretrained/Multi-DiT/model000540000.pt \
+    --txt_path data/tst/main-agent/text-audio/ \
+    --metadata_path data/tst/
 
-conda run -n llm python /workspace/scripts/inference.py \
+# Text-DiT
+python scripts/inference.py \
     --model_name Text-DiT \
-    --model_path /workspace/models/pretrained/Text-DiT/model000540000.pt \
-    --txt_path /workspace/data/tst/main-agent/text-audio/ \
-    --metadata_path /workspace/data/tst/
+    --model_path models/pretrained/Text-DiT/model000540000.pt \
+    --txt_path data/tst/main-agent/text-audio/ \
+    --metadata_path data/tst/
 
 ```
 *Output*: BVH files are saved in `bvh_generated/<model_name>_model000540000/`.
