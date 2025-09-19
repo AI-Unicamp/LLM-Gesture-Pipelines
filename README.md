@@ -29,68 +29,68 @@ Generating expressive and contextually appropriate co-speech gestures is crucial
 ## 📂 Project Structure
 
 📂 LLM-Gesture-Pipelines
-┣ 📜 README.md
-┣ 📜 LICENSE
-┣ 📜 environment.yml
-┣ 📜 Dockerfile
-┣ 📜 .gitignore
-┣ 📂 DiffuseStyleGesture
-┃ ┣ *(Cloned automatically in Docker build to `/root/DiffuseStyleGesture`; available as a [git submodule](https://github.com/YoungSeng/DiffuseStyleGesture.git) for local development)*
-┣ 📂 data
-┃ ┣ 📜 README.md
-┃ ┣ 📂 trn
-┃ ┣ 📂 tst
-┃ ┃ ┣ 📂 main-agent
-┃ ┃ ┃ ┣ 📂 wav
-┃ ┃ ┃ ┣ 📂 tsv
-┃ ┃ ┃ ┣ 📂 text-audio
-┃ ┃ ┃ ┃ ┣ 📄 tst_2023_v0_028_main-agent_text_audio.npy
-┃ ┃ ┃ ┃ ┣ 📄 ...
-┃ ┃ ┃ ┣ 📄 metadata.csv
-┃ ┣ 📄 val_2023_v0_014_main-agent.npy
-┣ 📂 models
-┃ ┣ 📂 WavLM
-┃ ┃ ┗ 📄 WavLM-Large.pt *(Manual download required)*
-┃ ┣ 📂 llama-3.2-3b-instruct *(Manual download required)*
-┃ ┃ ┣ 📄 config.json
-┃ ┃ ┣ 📄 model-00001-of-00002.safetensors
-┃ ┃ ┣ 📄 model-00002-of-00002.safetensors
-┃ ┃ ┣ 📄 tokenizer.json
-┃ ┃ ┣ *(Other configuration and model files)*
-┃ ┣ 📂 pretrained
-┃ ┃ ┣ 📜 README.md
-┃ ┃ ┣ 📂 Basic-Whisper
-┃ ┃ ┃ ┣ 📄 model000540000.pt
-┃ ┃ ┣ 📂 Multi-DiT
-┃ ┃ ┃ ┣ 📄 model000540000.pt
-┃ ┃ ┣ 📂 ...
-┃ ┣ 📄 mdm.py *(Unified model for all pipelines)*
-┃ ┣ 📜 DiffuseStyleGesture.yml *(configuration for all pipelines)*
-┣ 📂 scripts
-┃ ┣ 📄 process_embedding.py
-┃ ┣ 📄 train.py
-┃ ┣ 📄 inference.py
-┃ ┣ 📄 evaluate.py
-┃ ┣ 📄 model_util.py
-┣ 📂 bvh_generated
-┃ ┣ 📂 Multi-Fusion_model000540000
-┃ ┣ 📂 Multi-Dual_model000540000
-┃ ┣ 📂 ...
-┣ 📂 docs
-┃ ┣ 📄 pipelines.png
-┣ 📂 evaluation
-┃ ┣ 📜 environment.yml
-┃ ┣ 📜 Dockerfile
-┃ ┣ 📂 metrics
-┃ ┃ ┣ 📄 Metrics-results-generated_540k-llm.txt
-┃ ┣ 📂 videos
-┃ ┃ ┣ 📜 README.md
-┣ 📂 examples
-┃ ┣ 📄 generate_gestures.py
-┃ ┣ 📂 sample_input
-┃ ┃ ┣ 📄 sample.txt
-┃ ┃ ┣ 📄 sample.wav
-┃ ┣ 📄 sample_output.bvh
+┣ 📜 README.md\
+┣ 📜 LICENSE\
+┣ 📜 environment.yml\
+┣ 📜 Dockerfile\
+┣ 📜 .gitignore\
+┣ 📂 DiffuseStyleGesture\
+┃ ┣ *(Cloned automatically in Docker build to `/root/DiffuseStyleGesture`; available as a [git submodule](https://github.com/YoungSeng/DiffuseStyleGesture.git) for local development)*\
+┣ 📂 data\
+┃ ┣ 📜 README.md\
+┃ ┣ 📂 trn\
+┃ ┣ 📂 tst\
+┃ ┃ ┣ 📂 main-agent\
+┃ ┃ ┃ ┣ 📂 wav\
+┃ ┃ ┃ ┣ 📂 tsv\
+┃ ┃ ┃ ┣ 📂 text-audio\
+┃ ┃ ┃ ┃ ┣ 📄 tst_2023_v0_000_main-agent_text_audio.npy\
+┃ ┃ ┃ ┃ ┣ 📄 tst_2023_v0_001_main-agent_text_audio.npy\
+┃ ┃ ┃ ┣ 📄 metadata.csv\
+┃ ┣ 📄 val_2023_v0_014_main-agent.npy\
+┣ 📂 models\
+┃ ┣ 📂 WavLM\
+┃ ┃ ┗ 📄 WavLM-Large.pt *(Manual download required)*\
+┃ ┣ 📂 llama-3.2-3b-instruct *(Manual download required)*\
+┃ ┃ ┣ 📄 config.json\
+┃ ┃ ┣ 📄 model-00001-of-00002.safetensors\
+┃ ┃ ┣ 📄 model-00002-of-00002.safetensors\
+┃ ┃ ┣ 📄 tokenizer.json\
+┃ ┃ ┣ *(Other configuration and model files)*\
+┃ ┣ 📂 pretrained\
+┃ ┃ ┣ 📜 README.md\
+┃ ┃ ┣ 📂 Basic-Whisper\
+┃ ┃ ┃ ┣ 📄 model000540000.pt\
+┃ ┃ ┣ 📂 Multi-DiT\
+┃ ┃ ┃ ┣ 📄 model000540000.pt\
+┃ ┃ ┣ 📂 ...\
+┃ ┣ 📄 mdm.py *(Unified model for all pipelines)*\
+┃ ┣ 📜 DiffuseStyleGesture.yml *(Configuration for all pipelines)*\
+┣ 📂 scripts\
+┃ ┣ 📄 process_embedding.py\
+┃ ┣ 📄 train.py\
+┃ ┣ 📄 inference.py\
+┃ ┣ 📄 evaluate.py\
+┃ ┣ 📄 model_util.py\
+┣ 📂 bvh_generated\
+┃ ┣ 📂 Multi-Fusion_model000540000\
+┃ ┣ 📂 Multi-Dual_model000540000\
+┃ ┣ 📂 ...\
+┣ 📂 docs\
+┃ ┣ 📄 pipelines.png\
+┣ 📂 evaluation\
+┃ ┣ 📜 environment.yml\
+┃ ┣ 📜 Dockerfile\
+┃ ┣ 📂 metrics\
+┃ ┃ ┣ 📄 Metrics-results-generated_540k-llm.txt\
+┃ ┣ 📂 videos\
+┃ ┃ ┣ 📜 README.md\
+┣ 📂 examples\
+┃ ┣ 📄 generate_gestures.py\
+┃ ┣ 📂 sample_input\
+┃ ┃ ┣ 📄 sample.txt\
+┃ ┃ ┣ 📄 sample.wav\
+┃ ┣ 📄 sample_output.bvh\
 
 
 ## ⚙️ Setup & Installation
